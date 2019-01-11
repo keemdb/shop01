@@ -1,3 +1,14 @@
+  // Firebase Init / 
+  var config = {
+    apiKey: "AIzaSyAwF5w2Sq75VxGQm-P9G6GTJ4nffwa7GV4",
+    authDomain: "keemdb-shop.firebaseapp.com",
+    databaseURL: "https://keemdb-shop.firebaseio.com",
+    projectId: "keemdb-shop",
+    storageBucket: "keemdb-shop.appspot.com",
+    messagingSenderId: "359770632520"
+  };
+  firebase.initializeApp(config);
+
 // top_nav hover 이벤트
 $(".top_icon").mouseenter(function(){
 	$(this).children("img").css({"opacity":.7});
@@ -28,3 +39,7 @@ $(".rt_cont .fa-close").click(function(){
 $(".madals").click(function(e){
 	e.stopPropagation();
 });
+
+//메인네비 / .navs
+
+// firebase.database().ref("root/test").push({test:"테스트"}).key;  // 이거슨 데이타베이스 잘 들어가나 해보는 테스트
