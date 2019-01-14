@@ -8,6 +8,16 @@
     messagingSenderId: "359770632520"
   };
   firebase.initializeApp(config);
+  //Firebase Init
+var db = firebase.database();
+db.ref("root/home").on("child_added", homeAdd);
+function homeAdd(data) {
+	var html = `
+	<li class="rt_arrow">
+		<a href="${data.val().link}" target="${data.val().target}">${data.val().title}</a>
+	</li>`;
+	$(".nav_sub").eq(0).append(html);
+}
 
 // top_nav hover 이벤트
 $(".top_icon").mouseenter(function(){
@@ -15,6 +25,16 @@ $(".top_icon").mouseenter(function(){
 });
 $(".top_icon").mouseleave(function(){
 	$(this).children("img").css({"opacity":1});
+});
+
+// nav 이벤트 (nav_sub show/hide)
+$(".nav").mouseenter(function(){
+	$(this).children(".nav_sub").css({"display":"block", "opacity":0}).stop().animate({"opacity":1, "top":"45px"}, 200);
+});
+$(".nav").mouseleave(function(){
+	$(this).children(".nav_sub").stop().animate({"opacity":0, "top":"80px"}, 200, function(){
+		$(this).css({"display":"none"});
+	});
 });
 
 // rt_wings 이벤트
@@ -36,10 +56,10 @@ $(".rt_cont .fa-close").click(function(){
 	});
 });
 
-$(".madals").click(function(e){
+$(".rt_bg").click(function(e){
 	e.stopPropagation();
+	$(".rt_cont .fa-close").trigger("click");
 });
 
 //메인네비 / .navs
-
-// firebase.database().ref("root/test").push({test:"테스트"}).key;  // 이거슨 데이타베이스 잘 들어가나 해보는 테스트
+//firebase.database().ref("root/test").push({test:"테스트"}).key;
