@@ -1,4 +1,6 @@
-  // Firebase Init / 
+const log = console.log;  
+ 
+ // Firebase Init / 
   var config = {
     apiKey: "AIzaSyAwF5w2Sq75VxGQm-P9G6GTJ4nffwa7GV4",
     authDomain: "keemdb-shop.firebaseapp.com",
@@ -8,8 +10,11 @@
     messagingSenderId: "359770632520"
   };
   firebase.initializeApp(config);
-  //Firebase Init
+
+//Firebase Init
 var db = firebase.database();
+
+//카테고리 HOME 생성
 db.ref("root/home").on("child_added", homeAdd);
 function homeAdd(data) {
 	var html = `
@@ -18,6 +23,51 @@ function homeAdd(data) {
 	</li>`;
 	$(".nav_sub").eq(0).append(html);
 }
+
+// 카테고리 SHOP 생성 - Ajax/json 통신
+$.ajax({
+	type: "get",
+	url: "../json/shop.json",
+	dataType: "json",
+	success: function (data) {
+		var html = `<div class="shop_cates wrap clear">`;
+		for(var i=0; i<data.cates.length; i++) {
+			html += `
+			<ul>
+				<li class="shop_cate_tit">${data.cates[i].tit}</li>
+				<li>
+					<ul>`;
+			for(var j=0; j<data.cates[i].data.length; j++) {
+				html += `
+				<li class="shop_cate_name rt_arrow">
+				<a href="${data.cates[i].data[j].link}" target="${data.cates[i].data[j].target}">
+				${data.cates[i].data[j].name}</a>
+				</li>`;
+			}
+			html += `
+					</ul>
+				</li>
+			</ul>`;
+		}
+		html += `</div>`;
+		html += `<ul>`;
+		for(i=0; i<data.prds.length; i++) {
+			html += `
+			<li class="shop_prd"><a href="${data.prds[i].link}" target="${data.prds[i].target}">
+			<img src="${data.prds[i].src}" class="img">
+			</a>
+			</li>`;
+		}
+		html += `</ul>`;
+		$(".nav_sub").eq(1).append(html);
+	}
+});
+
+// window.resize()구현 
+$(window).resize(function(){
+	
+}).trigger("resize");
+
 
 // top_nav hover 이벤트
 $(".top_icon").mouseenter(function(){
