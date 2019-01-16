@@ -1,5 +1,6 @@
 @import 'base.css';
 /***** 공통사항 *****/
+body {min-height:3000px;}
 .wrap {width:100%; max-width:1400px; margin:auto; position:relative;}
 .modals {position:fixed; z-index:9999; display:none;}
 .rt_bg {width:100%; height:100%; background-color:#000; top:0; left:0;}
