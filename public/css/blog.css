@@ -13,3 +13,8 @@
 .sc_ins {margin-top:2rem; border-top:1px solid #ccc; padding-top:1rem;}
 .sc_ins > input {width:25%; margin-right:1rem;}
 .sc_ins > select {width:20%; margin-right:1rem;}
+
+#blogs {margin-top: 2rem;}
+#blogs > li {border-bottom: 1px solid #f1f1f1; padding: 0.5rem 0;}
+#blogs input {width:25%; margin-right:1rem;}
+#blogs select {width:20%; margin-right:1rem;}

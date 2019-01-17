@@ -83,6 +83,7 @@ $("#mc_save").click(function(){
 });
 
 $("#mc_sel").change(function(){
+
 	$(this).children("option").each(function(){
 		if($(this).val() == lastKey) {
 			$(this).attr("selected", true);
@@ -99,12 +100,18 @@ $("#mc_sel").change(function(){
 					<option value="_self">현재창</option>
 				</select>
 				<button class="w3-button w3-indigo" onclick="scAdd(this)">저장</button>
-			</div>`;
+			</div>
+			<ul id="blogs">
+			</ul>`;
 			$(".cont_wrap").empty().append(html);
 		}
 	});
 	$("#mc_chg").val(	$(this).children("option:selected").text()	);
+	db.ref("root/blog/"+key+"/sub").off();
 	key = $(this).children("option:selected").val();
+	db.ref("root/blog/"+key+"/sub").on("child_added", onSubAdd);
+	db.ref("root/blog/"+key+"/sub").on("child_removed", onSubRev);
+	db.ref("root/blog/"+key+"/sub").on("child_changed", onSubChg);
 });
 
 /***** 서브카테고리 *****/
@@ -126,8 +133,63 @@ function scAdd(obj){
 		target: $("#sc_target").val(),
 		link: $("#sc_link").val()
 	}).key;
+	$("#sc_name").val("");
+	$("#sc_link").val("");
 }
-
+function scChg(obj) {
+	var scKey = $(obj).parent().attr("id");
+	var $name = $(obj).prev().prev().prev();
+	var $link = $(obj).prev().prev();
+	var $target = $(obj).prev();
+	if($name.val() == "") {
+		alert("제목이 없습니다.");
+		$name.focus();
+		return;
+	}
+	if($link.val() == "") {
+		alert("링크가 없습니다.");
+		$link.focus();
+		return;
+	}
+	db.ref("root/blog/"+key+"/sub/"+scKey).update({
+		name: $name.val(),
+		link: $link.val(),
+		target: $target.val()
+	});
+}
+function scRev(obj) {
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		var scKey = $(obj).parent().attr("id");
+		db.ref("root/blog/"+key+"/sub/"+scKey).remove();
+	}
+}
+function onSubAdd(data) {
+	var sel = ["", ""];
+	if(data.val().target == "_blank") sel[0] = "selected";
+	else sel[1] = "selected"; 
+	var html = `
+	<li id="${data.key}">
+		<input type="text" class="w3-input w3-border w3-show-inline-block blog_title" 
+		value="${data.val().name}">
+		<input type="text" class="w3-input w3-border w3-show-inline-block blog_link" 
+		value="${data.val().link}">
+		<select class="w3-select w3-border w3-show-inline-block blog_target">
+			<option value="_blank" ${sel[0]}>새창</option>
+			<option value="_self"  ${sel[1]}>현재창</option>
+		</select>
+		<button class="w3-green w3-button" onclick="scChg(this);">수정</button>
+		<button class="w3-red w3-button" onclick="scRev(this);">삭제</button>
+	</li>`;
+	$("#blogs").append(html);
+}
+function onSubRev(data) {
+	$("#"+data.key).remove();
+}
+function onSubChg(data) {
+	$("#"+data.key).stop().animate({"opacity":0}, 300, function(){
+		$(this).css({"opacity":1});
+	});
+}
 
 
 /*

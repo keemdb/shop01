@@ -23,6 +23,21 @@ function homeAdd(data) {
 	</li>`;
 	$(".nav_sub").eq(0).append(html);
 }
+//카테고리 BLOG 생성
+db.ref("root/blog").on("child_added", blogAdd);
+function blogAdd(data) {
+	var html = `<ul id="${data.key}" class="grid-item">
+		<li class="grid-tit">${data.val().name}</li>
+	</ul>`;
+	$(".grid").append(html);
+}
+/*
+$('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+});
+*/
 
 // 카테고리 SHOP 생성 - Ajax/json 통신
 $.ajax({

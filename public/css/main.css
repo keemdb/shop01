@@ -52,7 +52,11 @@ body {min-height:3000px;}
 .shop_prd {width:30%; float:left;}
 .shop_prd:nth-child(2) {margin:0 5%;}
 /***** 카테고리 BLOG *****/
-.nav:nth-child(3) > .nav_sub {width:100%; padding:1rem 0; left:0;}
+.blogs {width:100%; padding:1rem; left:0; color:#000;}
+.blogs > :first-child {width:70%; float:left;}
+.blogs > :last-child {width:30%; float:right;}
+.grid {display:flex; flex-wrap:wrap;}
+.grid-item {width:50%; padding:3%; float:left;}
 
 .navs .nav:hover {color:#fff;}
 .navs .search {float:right; height:38px; margin-top:8px; background-color:#fff; border-radius:19px;}
