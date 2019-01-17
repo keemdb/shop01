@@ -38,9 +38,7 @@ function homeInit() {
 	ref[0].on("child_removed", homeRev);
 	ref[0].on("child_changed", homeChg);
 }
-
-
-/**** Firebase Callback함수 실행 ****/
+/***** Firebase Callback 함수.시작 *****/
 // Home 데이터가 추가되면 data변수에 추가된 내용을 담아 실행한다.
 function homeAdd(data){
 	var sel = ["", ""];
@@ -56,7 +54,7 @@ function homeAdd(data){
 			<option value="_blank" ${sel[0]}>새창</option>
 			<option value="_self"  ${sel[1]}>현재창</option>
 		</select>
-		<button class="w3-green w3-button" onclick="dataChg(this)">수정</button>
+		<button class="w3-green w3-button" onclick="dataChg(this);">수정</button>
 		<button class="w3-red w3-button" onclick="dataRev(this);">삭제</button>
 	</li>`;
 	$("#homes").append(html);
@@ -65,17 +63,13 @@ function homeAdd(data){
 function homeRev(data) {
 	$("#"+data.key).remove();
 }
-
-
 // Home 데이터가 수정되면 data변수에 수정된 내용을 담아 실행한다.
 function homeChg(data) {
 	$("#"+data.key).stop().animate({"opacity":0}, 300, function(){
 		$(this).css({"opacity":1});
-		alert("수정되었습니다");
 	});
 }
-
-/**** Firebase Callback함수 실행 ****/
+/***** Firebase Callback 함수.종료 *****/
 
 
 // home 저장 버튼을 눌렀을때.
@@ -88,7 +82,7 @@ $("#bt1_save").on("click", function(){
 		alert("링크 !!");
 		return;
 	}
-	//firebase 추가 명령
+	//Firebase 추가 명령
 	ref[0].push({
 		title: $("#title1").val(),
 		link: $("#link1").val(),
@@ -100,13 +94,15 @@ $("#bt1_save").on("click", function(){
 // home 삭제버튼을 눌렀을때
 function dataRev(obj) {
 	if(confirm("정말로 삭제하시겠습니까?")) {
-		db.ref("root/home/"+$(obj).parent().attr("id")).remove(); // firebase 삭제명령
+		//Firebase 삭제 명령
+		db.ref("root/home/"+$(obj).parent().attr("id")).remove();
 	}
 }
 // home 수정버튼을 눌렀을때
 function dataChg(obj) {
 	var $li = $(obj).parent();
 	key = $li.attr("id");
+	console.log(key); 
 	if($li.find(".home_title").val() == "") {
 		alert("제목 !!");
 		return;
@@ -115,7 +111,7 @@ function dataChg(obj) {
 		alert("링크 !!");
 		return;
 	}
-	// firebase 수정명령
+	//Firebase 수정 명령
 	db.ref("root/home/"+key).update({
 		title: $li.find(".home_title").val(),
 		link: $li.find(".home_link").val(),
