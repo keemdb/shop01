@@ -17,6 +17,7 @@
 	<script src="../js/masonry.pkgd.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 </head>
+
 <body>
 	<!-- 상단 네비 / top_navs -->
 	<div class="top_navs wrap clear">
@@ -44,15 +45,26 @@
 	<!-- 메인 네비 / navs -->
 	<div class="navs">
 		<ul class="wrap clear">
-			<li class="nav rel">HOME<ul class="nav_sub clear"></ul></li>
-			<li class="nav">SHOP<ul class="nav_sub clear"></ul></li>
-			<li class="nav">BLOG<ul class="nav_sub clear"></ul></li>
-			<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul></li>
-			<li class="nav">CONTACT<ul class="nav_sub clear"></ul></li>		
+			<li class="nav rel">HOME<ul class="nav_sub clear"></ul>
+			</li>
+			<li class="nav">SHOP<ul class="nav_sub clear"></ul>
+			</li>
+			<li class="nav">BLOG
+				<ul class="nav_sub blogs clear">
+					<li class="grid"></li>
+					<li>
+						<img src="../img/menu-blog.jpg" class="img">
+					</li>
+				</ul>
+			</li>
+			<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul>
+			</li>
+			<li class="nav">CONTACT<ul class="nav_sub clear"></ul>
+			</li>
 			<li class="search">
 				<input type="text" name="search" class="in_search" placeholder="search">
 				<span class="fa fa-search"></span>
-			</li>		
+			</li>
 		</ul>
 	</div>
 	<!-- 오른쪽 날개 / rt_wings -->
@@ -77,4 +89,5 @@
 	<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
 	<script src="../js/main.js"></script>
 </body>
+
 </html>

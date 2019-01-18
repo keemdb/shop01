@@ -14,8 +14,13 @@ const log = console.log;
 //Firebase Init
 var db = firebase.database();
 
+mainInit();
+function mainInit() {
+	db.ref("root/home").on("child_added", homeAdd);
+	db.ref("root/blog").on("child_added", blogAdd);
+}
+
 //카테고리 HOME 생성
-db.ref("root/home").on("child_added", homeAdd);
 function homeAdd(data) {
 	var html = `
 	<li class="rt_arrow">
@@ -24,12 +29,20 @@ function homeAdd(data) {
 	$(".nav_sub").eq(0).append(html);
 }
 //카테고리 BLOG 생성
-db.ref("root/blog").on("child_added", blogAdd);
 function blogAdd(data) {
 	var html = `<ul id="${data.key}" class="grid-item">
 		<li class="grid-tit">${data.val().name}</li>
 	</ul>`;
 	$(".grid").append(html);
+	db.ref("root/blog/"+data.key+"/sub").once("value", function(sub){
+		sub.forEach(function(v, i){
+			html = `
+			<li class="rt_arrow" id="${v.key}">
+				<a href="${v.val().link}" target="${v.val().target}">${v.val().name}</a>
+			</li>`;
+			$("#"+data.key).append(html);
+		});
+	});
 }
 /*
 $('.grid').masonry({

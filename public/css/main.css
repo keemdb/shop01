@@ -1,7 +1,7 @@
 @import 'base.css';
 /***** 공통사항 *****/
 body {min-height:3000px;}
-.wrap {width:100%; max-width:1400px; margin:auto; position:relative;}
+.wrap {width:100%; max-width:1170px; margin:auto; position:relative;}
 .modals {position:fixed; z-index:9999; display:none;}
 .rt_bg {width:100%; height:100%; background-color:#000; top:0; left:0;}
 .rt_cont {width:240px; height:100%; background-color:#fff; text-align:center; top:0; right:0; font-size:0.75rem;}
@@ -11,7 +11,7 @@ body {min-height:3000px;}
 .country {margin-top:1.5em;}
 .country > span {width:40px; height:40px; line-height:40px; margin:4px 0; cursor:pointer;}
 .country > span:hover {background-color: rgb(104, 211, 119) !important;}
-.rt_arrow {transition:padding-left 0.2s;}
+.rt_arrow {transition:padding-left 0.2s; height:2rem; line-height:2rem; border-bottom:1px solid #ccc;}
 .rt_arrow:hover {padding-left:20px; 
 	background:url(../img/arrow_right.png) no-repeat left center;}
 .rt_arrow a {text-decoration:none;}
@@ -42,7 +42,7 @@ body {min-height:3000px;}
 .navs .nav_sub {position: absolute; min-width:200px; min-height:200px; background-color:white; box-shadow: 0 0 10px rgba(0,0,0,.5); display:none; top:80px;}
 /***** 카테고리 HOME *****/
 .nav:nth-child(1) > .nav_sub {width:400px; padding:1rem 0;}
-.nav:nth-child(1) > .nav_sub > li {float:left; width:160px; height:30px; line-height:30px; border-bottom:1px solid #ccc; margin:5px 20px; overflow:hidden;}
+.nav:nth-child(1) > .nav_sub > li {float:left; width:160px; margin:5px 20px; overflow:hidden;}
 /***** 카테고리 SHOP *****/
 .nav:nth-child(2) > .nav_sub {width:100%; padding:2rem; left:0;}
 .shop_cates > ul {width:21%; margin:0 2%; float:left; font-size:0.75rem;}
