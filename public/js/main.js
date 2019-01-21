@@ -184,7 +184,7 @@ $(".rt_bg").click(function(e){
 });
 
 //메인배너 / .bans
-fadeShow();
+//fadeShow();
 function fadeShow() {
 	var $wrap = $(".ban");
 	var $slide = $(".ban > li");	
@@ -193,10 +193,98 @@ function fadeShow() {
 	var speed = 500;
 	var timeout = 3000;
 	var end = $slide.length - 1;
-	var interval = setInterval(fadeAni, timeout);
+	var interval;
+	$slide.each(function(i){
+		$(this).css({"position":"absolute"});
+		$wrap.height($(this).height());
+		$(".cycle-pager").append("<span>●</span>");
+	});
+	$(".cycle-pager span").click(function(){
+		now = $(this).index();
+		fadeAni();
+		clearInterval(interval);
+		interval = setInterval(fadeAni, timeout);
+	});
+	interval = setInterval(fadeAni, timeout);
 	function fadeAni() {
+		$(".cycle-pager span").removeClass("cycle-pager-active");
+		$(".cycle-pager span").eq(now).addClass("cycle-pager-active");
 		$slide.eq(now).css({"z-index":depth++, "opacity":0}).stop().animate({"opacity":1}, speed, function(){
 			if(now == end) now = 0;
+			else now++;
+		});
+	}
+}
+//horzShow();
+function horzShow() {
+	$(".ban").append($(".ban > li").eq(0).clone());
+	var $wrap = $(".ban");
+	var $slide = $(".ban > li");
+	var now = 1;
+	var speed = 500;
+	var timeout = 3000;
+	var end = $slide.length - 1;
+	var interval;
+	$slide.each(function(i){
+		$(this).css({"left":(i*100)+"%", "position":"absolute"});
+		$wrap.height($(this).height());
+		if(i<end) $(".cycle-pager").append("<span>●</span>");
+	});
+	$(".cycle-pager span").click(function(){
+		now = $(this).index();
+		horzAni();
+		clearInterval(interval);
+		interval = setInterval(horzAni, timeout);
+	});
+	interval = setInterval(horzAni, timeout);
+	function horzAni() {
+		if(now == end) pnow = 0;
+		else pnow = now;
+		$(".cycle-pager span").removeClass("cycle-pager-active");
+		$(".cycle-pager span").eq(pnow).addClass("cycle-pager-active");
+		$wrap.stop().animate({"left":(-now*100)+"%"}, speed, function(){
+			if(now == end) {
+				$wrap.css({"left":0});
+				now = 1;
+			}
+			else now++;
+		});
+	}	
+}
+vertShow();
+function vertShow() {
+	$(".ban").append($(".ban > li").eq(0).clone());
+	var $wrap = $(".ban");
+	var $slide = $(".ban > li");
+	var now = 1;
+	var speed = 500;
+	var timeout = 3000;
+	var end = $slide.length - 1;
+	var interval;
+	$slide.each(function(i){
+		if(i<end) $(".cycle-pager").append("<span>●</span>");
+	});
+	$(".cycle-pager span").click(function(){
+		now = $(this).index();
+		vertAni();
+		clearInterval(interval);
+		interval = setInterval(vertAni, timeout);
+	});
+	interval = setInterval(vertAni, timeout);
+	$(window).resize(function(){
+		$(".bans").height($slide.height());
+	}).trigger("resize");
+	function vertAni() {
+		if(now == end) pnow = 0;
+		else pnow = now;
+		$(".cycle-pager span").removeClass("cycle-pager-active");
+		$(".cycle-pager span").eq(pnow).addClass("cycle-pager-active");
+		var top = $slide.eq(now).position().top;
+		$wrap.stop().animate({"top":-top+"px"}, speed, function(){
+			if(now == end) {
+				$wrap.css({"top":0});
+				now = 1;
+			}
 			else now++;
 		});
 	}
