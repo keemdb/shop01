@@ -58,7 +58,8 @@
 					</li>
 				</ul>
 			</li>
-			<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul></li>
+			<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul>
+			</li>
 			<li class="nav">CONTACT</li>
 			<li class="search">
 				<input type="text" name="search" class="in_search" placeholder="search">
@@ -68,12 +69,24 @@
 	</div>
 	<!-- 메인 배너 및 좌측 네비 / mains -->
 	<ul class="mains wrap clear">
-		<li class="lefts"><ul class="left"></ul></li>
+		<li class="lefts">
+			<ul class="left"></ul>
+		</li>
 		<li class="bans">
 			<ul class="ban">
-				<li><img src="../img/slider-7.jpg" class="img"></li>
-				<li><img src="../img/slider-8.jpg" class="img"></li>
-				<li><img src="../img/slider-12.jpg" class="img"></li>
+				<li>
+					<img src="../img/slider-7.jpg" class="img">
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0s">Shopping!!</div>
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0.5s">쇼핑의 즐거움</div>
+				</li>
+				<li>
+					<img src="../img/slider-8.jpg" class="img">
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0s">Goods</div>
+				</li>
+				<li>
+					<img src="../img/slider-12.jpg" class="img">
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0s">Street Style</div>
+				</li>
 			</ul>
 			<div class="cycle-pager"></div>
 			<!--ul class="ban cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="3000" data-cycle-slides="> li" data-pause-on-hover="true" data-cycle-speed="500">
@@ -84,7 +97,38 @@
 			</ul-->
 		</li>
 	</ul>
-
+	<!-- 대표상품 / .favs -->
+	<ul class="favs wrap clear">
+		<li class="fav hov_ani">
+			<img src="../img/banner-13.jpg" class="img">
+		</li>
+		<li class="fav hov_ani">
+			<img src="../img/banner-15.jpg" class="img">
+		</li>
+	</ul>
+	<!-- woman 상품 / .womans -->
+	<div class="womans wrap">
+		<div class="woman_tits clear">
+			<div class="woman_tit">
+				<h2>WOMAN</h2>
+				<span>PAND-PICKED ARRIVALS FROM THE BEST DESIGNER</span>
+			</div>
+			<div class="woman_bts">
+				<div class="ghost_bt fl">
+					<div></div>
+					<span>LATEST</span>
+				</div>
+				<div class="ghost_bt fl">
+					<div></div>
+					<span>TOP RATING</span>
+				</div>
+				<div class="ghost_bt fl">
+					<div></div>
+					<span>BEST SELLERS</span>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- 오른쪽 날개 / rt_wings -->
 	<div class="modals rt_bg"></div>
