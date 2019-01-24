@@ -1,20 +1,20 @@
 {
 	"lefts":[
-		{"name":"UNCATEGORIZED"},
-		{"name":"HLETIC APPAREL"},
-		{"name":"OTTOMS"},
-		{"name":"DRESS SHIRTS"},
-		{"name":"DRESSES"},
-		{"name":"HANDBAGS"},
-		{"name":"JEANS"},
-		{"name":"KIDS & BABY"},
-		{"name":"MEN"},
-		{"name":"ONE PIECES"},
-		{"name":"PANTS"},
-		{"name":"SHOES"},
-		{"name":"SWEATS & HOODIES"},
-		{"name":"SWIMWEAR"},
-		{"name":"WATCHES"},
-		{"name":"WOMEN"}
+		{"name":"Uncategorized"},
+		{"name":"Athletic Apparel"},
+		{"name":"Bottoms"},
+		{"name":"Dress Shirts"},
+		{"name":"Dresses"},
+		{"name":"Handbags"},
+		{"name":"Jeans"},
+		{"name":"Kids & Baby"},
+		{"name":"Men"},
+		{"name":"One Pieces"},
+		{"name":"Pants"},
+		{"name":"Shoes"},
+		{"name":"Sweats & Hoodies"},
+		{"name":"Swimwear"},
+		{"name":"Watches"},
+		{"name":"Women"}
 	]
 }

@@ -1,18 +1,18 @@
 {
-	"ports": [{
-		"name":"portfolio 2 columns",
+	"ports":[{
+		"name":"Portfolio 2 columns",
 		"link":"../test/test.html",
 		"target":"_self"
 	},{
-		"name":"portfolio 3 columns",
+		"name":"Portfolio 3 columns",
 		"link":"../test/test.html",
 		"target":"_self"
 	},{
-		"name":"portfolio 4 columns",
+		"name":"Portfolio 2 columns",
 		"link":"../test/test.html",
 		"target":"_self"
 	},{
-		"name":"portfolio masonry",
+		"name":"Portfolio masonry",
 		"link":"../test/test.html",
 		"target":"_self"
 	}]
