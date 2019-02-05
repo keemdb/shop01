@@ -96,7 +96,7 @@ function shopAjax(data) {
 	html += '</div>';
 	html += '<ul class="shop_prds">';
 	for(i=0; i<data.prds.length; i++) {
-		html += '<li class="shop_prd ovhide"><a href="'+data.prds[i].link+' target="'+data.prds[i].target+'><img src="'+data.prds[i].src+' class="img size_ani"></a></li>';
+		html += '<li class="shop_prd ovhide"><a href="'+data.prds[i].link+' target="'+data.prds[i].target+'><img src="'+data.prds[i].src+'" class="img size_ani"></a></li>';
 	}
 	html += '</ul>';
 	$(".nav_sub").eq(1).append(html);
@@ -375,7 +375,7 @@ $(".hov_ani").each(function(){
 });
 
 /***** .prds Ajax 연동 *****/
-new Ajax("../json/woman.json", prdInit);
+new Ajax("../json/sweat.json", prdInit);
 new Ajax("../json/man.json", prdInit);
 function prdInit(data) {
 	var cate = data.cate;

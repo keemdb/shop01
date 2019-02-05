@@ -1,0 +1,134 @@
+{
+	"cate": "woman",
+	"all":{
+		"latest":[
+			{
+				"tit": "STONE ISLAND GARMENT DYED CREW SWEAT",
+				"img1": "../img/sweat01.jpg",
+				"img2": "../img/sweat_hover01.jpg",
+				"star": 3,
+				"price": "<span>₩335,000</span>",
+				"sale": true,
+				"hot": false,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "ACNE STUDIOS KAI BLOCK STRIPE SHETLAND CREW KNIT",
+				"img1": "../img/sweat02.jpg",
+				"img2": "../img/sweat_hover02.jpg",
+				"star": 4,
+				"price": "<span>₩348,000</span>",
+				"sale": false,
+				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "ACNE STUDIOS KALMAR PATCH MERINO KNIT",
+				"img1": "../img/sweat03.jpg",
+				"img2": "../img/sweat_hover03.jpg",
+				"star": 3,
+				"price": "<span class=\"del_price\">₩502,000</span><span>₩452,000</span>",
+				"sale": true,
+				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "OFF-WHITE STENCIL DIAGONALS POPOVER HOODY",
+				"img1": "../img/sweat04.jpg",
+				"img2": "../img/sweat_hover04.jpg",
+				"star": 5,
+				"price": "<span class=\"del_price\">₩580,000</span><span>₩520,000</span>",
+				"sale": false,
+				"hot": false,
+				"link": "../test/test.html",
+				"target": "_blank"
+			}
+		], 
+		"top":[
+			{
+				"tit": "EDWIN SUNSET ON MT.FUJI POPOVER HOODY",
+				"img1": "../img/sweat05.jpg",
+				"img2": "../img/sweat_hover05.jpg",
+				"star": 5,
+				"price": "<span class=\"del_price\">₩124,600</span><span>₩115,000</span>",
+				"sale": false,
+				"hot": false,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "MARTINE ROSE ACID WASHED POPOVER HOODY",
+				"img1": "../img/sweat06.jpg",
+				"img2": "../img/sweat_hover06.jpg",
+				"star": 3,
+				"price": "<span>₩508,000 - ₩558,000</span>",
+				"sale": true,
+				"hot": false,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "WOOYOUNGMI SPLIT LOGO CREW SWEAT",
+				"img1": "../img/sweat07.jpg",
+				"img2": "../img/sweat_hover07.jpg",
+				"star": 3,
+				"price": "<span class=\"del_price\">₩326,000</span><span>₩296,000</span>",
+				"sale": true,
+				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "ACNE STUDIOS FAGEN BERRY HOODY",
+				"img1": "../img/sweat08.jpg",
+				"img2": "../img/sweat_hover08.jpg",
+				"star": 4,
+				"price": "<span>₩432,599</span>",
+				"sale": false,
+				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			}
+		], 
+		"best":[
+			{
+				"tit": "NEMEN ID CREW SWEAT",
+				"img1": "../img/sweat12.jpg",
+				"img2": "../img/sweat_hover12.jpg",
+				"star": 4,
+				"price": "<span>₩300,000</span>",
+				"sale": false,
+				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "CHAMPION REVERSE WEAVE CLASSIC CREW SWEAT",
+				"img1": "../img/sweat09.jpg",
+				"img2": "../img/sweat_hover09.jpg",
+				"star": 3,
+				"price": "<span>₩100,000 - ₩110,000</span>",
+				"sale": true,
+				"hot": false,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "PUMA XTG RETRO CREW SWEAT",
+				"img1": "../img/sweat10.jpg",
+				"img2": "../img/sweat_hover10.jpg",
+				"star": 5,
+				"price": "<span class=\"del_price\">₩65,000</span><span>₩60,000</span>",
+				"sale": false,
+				"hot": false,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "ALPHA INDUSTRIES SPACE SHUTTLE HOODY - END. EXCLUSIVE",
+				"img1": "../img/sweat11.jpg",
+				"img2": "../img/sweat_hover11.jpg",
+				"star": 3,
+				"price": "<span class=\"del_price\">₩118,000</span><span>₩102,000</span>",
+				"sale": true,
+				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			}
+		]
+	}
+}

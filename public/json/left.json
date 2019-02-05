@@ -1,20 +1,20 @@
 {
 	"lefts":[
-		{"name":"Uncategorized"},
-		{"name":"Athletic Apparel"},
-		{"name":"Bottoms"},
-		{"name":"Dress Shirts"},
-		{"name":"Dresses"},
-		{"name":"Handbags"},
-		{"name":"Jeans"},
-		{"name":"Kids & Baby"},
-		{"name":"Men"},
-		{"name":"One Pieces"},
-		{"name":"Pants"},
-		{"name":"Shoes"},
-		{"name":"Sweats & Hoodies"},
-		{"name":"Swimwear"},
-		{"name":"Watches"},
-		{"name":"Women"}
+		{"name":"A.P.C."},
+		{"name":"Aesop"},
+		{"name":"Balenciaga"},
+		{"name":"Barbour"},
+		{"name":"Calvin Klein"},
+		{"name":"C.P. Company"},
+		{"name":"Danner"},
+		{"name":"Fila"},
+		{"name":"Head Porter"},
+		{"name":"Jimmy Choo"},
+		{"name":"Lanvin"},
+		{"name":"Moscot"},
+		{"name":"Neil Barrett"},
+		{"name":"Stussy"},
+		{"name":"The North Face"},
+		{"name":"Y-3"}
 	]
 }
