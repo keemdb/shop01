@@ -1,19 +1,23 @@
 {
 	"ports":[{
-		"name":"Portfolio 2 columns",
-		"link":"../test/test.html",
-		"target":"_self"
+		"name":"Brompton",
+		"link":"http://keemdb.cafe24.com/brompton",
+		"target":"_blank"
 	},{
-		"name":"Portfolio 3 columns",
-		"link":"../test/test.html",
-		"target":"_self"
+		"name":"PF01",
+		"link":"http://keemdb-pf01.firebaseapp.com",
+		"target":"_blank"
 	},{
-		"name":"Portfolio 2 columns",
-		"link":"../test/test.html",
-		"target":"_self"
+		"name":"Rentube",
+		"link":"http://keemdb.cafe24.com/rentube_hc",
+		"target":"_blank"
 	},{
-		"name":"Portfolio masonry",
-		"link":"../test/test.html",
-		"target":"_self"
+		"name":"Nord Keyboard",
+		"link":"http://keemdb.cafe24.com/nord",
+		"target":"_blank"
+	},{
+		"name":"Moonlight Gear",
+		"link":"http://csswave.cafe24.com",
+		"target":"_blank"
 	}]
 }

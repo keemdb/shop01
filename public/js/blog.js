@@ -51,7 +51,7 @@ function onChg(data) {
 	});
 }
 function mcRev(obj) {
-	if(confirm("정말 삭제? 진심?")) {
+	if(confirm("정말로 삭제하시겠습니까?")) {
 		db.ref("root/blog/"+$("#mc_sel option:selected").val()).remove();
 	}
 }

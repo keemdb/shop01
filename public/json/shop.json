@@ -1,75 +1,75 @@
 {
 	"cates": [
 		{
-			"tit": "CATEGORY VIEW",
+			"tit": "LATEST",
 			"data": [
 				{
-					"name": "Grid View",
+					"name": "New This Week",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "List View",
+					"name": "Latest Sneakers",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Left Sidebar",
+					"name": "Restocks",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Right Sidebar",
+					"name": "Latest Women's",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Without View",
+					"name": "Latest Kids'",
 					"link": "../test/test.html",
 					"target": "_self"
 				}
 			]
 		},
 		{
-			"tit": "PRODUCT VIEW",
+			"tit": "CLOTHING",
 			"data": [
 				{
-					"name": "Layout Zoom",
+					"name": "Coats & Jackets",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Layout Scroll",
+					"name": "Jeans",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Layout List",
+					"name": "Knitwear",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Layout List 2",
+					"name": "Loungewear",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Left Thumbnail",
+					"name": "Shirts",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Right Thumbnail",
+					"name": "Shorts",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "bottom Thumbnail",
+					"name": "Sweats",
 					"link": "../test/test.html",
 					"target": "_self"
 				},
 				{
-					"name": "Without Thumbnail",
+					"name": "T-Shirts",
 					"link": "../test/test.html",
 					"target": "_self"
 				}

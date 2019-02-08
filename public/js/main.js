@@ -4,6 +4,14 @@ const log = console.log;
 $("body").imagesLoaded(function(){
 	$(window).trigger("resize");
 });
+
+$(window).resize(function(){
+	var hei = 0;
+	$(".auto_hei").each(function(i){
+		if(hei < $(this).height()) hei = $(this).height();
+		$(this).parent().height(hei);	
+	});
+}).trigger("resize");
 //$.ajax() 객체화
 var Ajax = (function(){
 	function Ajax(url, fn, opts) {
@@ -64,14 +72,14 @@ function homeAdd(data) {
 //카테고리 BLOG 생성
 function blogAdd(data) {
 	var html = '';
-	html += '<ul id="'+data.key+' class="grid-item">';
+	html += '<ul id="'+data.key+'" class="grid-item">';
 	html += '<li class="grid-tit">'+data.val().name+'</li>';
 	html += '</ul>';
 	$(".grid").append(html);
 	db.ref("root/blog/"+data.key+"/sub").once("value", function(sub){
 		sub.forEach(function(v, i){
-			html  = '<li class="rt_arrow" id="'+v.key+'>';
-			html += '<a href="'+v.val().link+' target="'+v.val().target+'>'+v.val().name+'</a>';
+			html  = '<li class="rt_arrow" id="'+v.key+'">';
+			html += '<a href="'+v.val().link+'" target="'+v.val().target+'">'+v.val().name+'</a>';
 			html += '</li>';
 			$("#"+data.key).append(html);
 		});
@@ -89,14 +97,14 @@ function shopAjax(data) {
 		html += '<ul>';
 		for(var j=0; j<data.cates[i].data.length; j++) {
 		html += '<li class="shop_cate_name rt_arrow">';
-		html += '<a href="'+data.cates[i].data[j].link+' target="'+data.cates[i].data[j].target+'>'+data.cates[i].data[j].name+'</a></li>';
+		html += '<a href="'+data.cates[i].data[j].link+'" target="'+data.cates[i].data[j].target+'">'+data.cates[i].data[j].name+'</a></li>';
 		}
 		html += '</ul></li></ul>';
 	}
 	html += '</div>';
 	html += '<ul class="shop_prds">';
 	for(i=0; i<data.prds.length; i++) {
-		html += '<li class="shop_prd ovhide"><a href="'+data.prds[i].link+' target="'+data.prds[i].target+'><img src="'+data.prds[i].src+'" class="img size_ani"></a></li>';
+		html += '<li class="shop_prd ovhide"><a href="'+data.prds[i].link+'" target="'+data.prds[i].target+'"><img src="'+data.prds[i].src+'" class="img size_ani"></a></li>';
 	}
 	html += '</ul>';
 	$(".nav_sub").eq(1).append(html);
@@ -106,7 +114,7 @@ function shopAjax(data) {
 new Ajax("../json/port.json", portAjax);
 function portAjax(data) {
 	for(var i in data.ports) {
-		var html = '<li class="rt_arrow"><a href="'+data.ports[i].link+' target="'+data.ports[i].target+'>'+data.ports[i].name+'</a></li>';
+		var html = '<li class="rt_arrow"><a href="'+data.ports[i].link+'" target="'+data.ports[i].target+'">'+data.ports[i].name+'</a></li>';
 		$(".nav_sub").eq(3).append(html);
 	}
 }
@@ -524,6 +532,8 @@ function swInit() {
 	$slides.hide(0);
 	$slides.eq(swNow).show(0);
 }
+
+
 
 /***** TOP 버튼 *****/
 $(window).scroll(function(){
